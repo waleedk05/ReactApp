@@ -15,7 +15,7 @@ import React from 'react';
 function App() {
   return (
 
-    <View style={{ height: "100%", width: "100%", backgroundColor: "#6495ed" }}>
+    <View style={{ flex: 1, backgroundColor: "#6495ed" }}>
 
 
       <View style={styles.imageShadow}>
@@ -39,16 +39,42 @@ function App() {
         onChangeText={onChangeText}
         placeholder="    Enter your name"
         value={Text}
+        autoCapitalize="words"
+
+      />
+
+
+      <TextInput
+        style={styles.textInputStyle}
+        onChangeText={onChangeText}
+        placeholder="    @email.com"
+        value={Text}
+        autoCapitalize="words"
+        textContentType="emailAddress"
+        keyboardType="email-address"
+        inputMode="email"
       />
 
 
       <View>
         <TouchableOpacity
-          style={styles.buttonStyle}
+          style={styles.happyStyle}
           onPress={() => Alert.alert("HaHa! Just Kidding XD")}>
 
-          <Text style={{ fontSize: "16", alignSelf: "center", color: "white" }}>
-            Press me to make you Happy
+          <Text style={{ fontSize: "16", alignSelf: "center", color: "white", fontWeight: 'bold' }}>
+            Logn In
+          </Text>
+
+        </TouchableOpacity>
+      </View>
+
+      <View>
+        <TouchableOpacity
+          style={styles.angryStyle}
+          onPress={() => Alert.alert("You are dumb!")}>
+
+          <Text style={{ fontSize: "16", alignSelf: "center", color: "white", fontWeight: 'bold' }}>
+            Sign Up
           </Text>
 
         </TouchableOpacity>
@@ -63,9 +89,9 @@ function App() {
 
 const styles = StyleSheet.create({
   imageShadow: {
-    shadowColor: '#000000',
-    shadowOffset: { width: 5, height: 7 },
-    shadowRadius: 7,
+    shadowColor: 'purple',
+    shadowOffset: { width: 2, height: 2 },
+    shadowRadius: 10,
     shadowOpacity: 80,
 
   },
@@ -74,7 +100,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     marginTop: "10%",
     fontSize: "14%",
-    fontStyle: 'bold',
+    fontWeight: 'bold',
     color: "black",
   },
 
@@ -88,29 +114,52 @@ const styles = StyleSheet.create({
   },
 
   textInputStyle: {
-    marginTop: '10%',
+    marginTop: '8%',
     borderWidth: '2',
     marginLeft: '10%',
     marginRight: '10%',
     paddingVertical: '4%',
     borderRadius: '10%',
     fontSize: '17%',
-    fontStyle: 'italic',
+    fontStyle: 'normal',
+    shadowColor: 'black',
+    shadowOffset: { width: 2, height: 2 },
+    shadowRadius: 2,
+    shadowOpacity: 10,
+    backgroundColor: '#f5f5f5'
+
   },
 
-  buttonStyle: {
+  happyStyle: {
     backgroundColor: "#008080",
     borderRadius: "18",
     paddingHorizontal: "1%",
     paddingVertical: "4%",
-    marginLeft: "15%",
-    marginRight: "15%",
-    marginTop: "20%",
+    marginLeft: "25%",
+    marginRight: "25%",
+    marginTop: "15%",
     elevation: "8",
     justifyContent: "center",
     shadowColor: 'black',
-    shadowOffset: { width: 1, height: 3 },
-    shadowRadius: 5,
+    shadowOffset: { width: 2, height: 2 },
+    shadowRadius: 2,
+    shadowOpacity: 80,
+
+  },
+
+  angryStyle: {
+    backgroundColor: "#2e8b57",
+    borderRadius: "18",
+    paddingHorizontal: "0%",
+    paddingVertical: "4%",
+    marginLeft: "25%",
+    marginRight: "25%",
+    marginTop: "10%",
+    elevation: "8",
+    justifyContent: "center",
+    shadowColor: 'black',
+    shadowOffset: { width: 2, height: 2 },
+    shadowRadius: 2,
     shadowOpacity: 80,
 
   }
