@@ -7,7 +7,7 @@ import {
   ImageBackground,
   Image,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const GetStarted = ({ navigation }) => {
   return (
@@ -15,7 +15,7 @@ const GetStarted = ({ navigation }) => {
       source={require("../../assets/background_1.png")}
       style={styles.imgBg}
     >
-      <SafeAreaView style={styles.GetStarted}>
+      <SafeAreaProvider style={styles.GetStarted}>
         <View>
           <Image
             style={styles.logoStyle1}
@@ -28,7 +28,7 @@ const GetStarted = ({ navigation }) => {
             <Text style={styles.buttonText}>Get Started</Text>
           </TouchableOpacity>
         </View>
-      </SafeAreaView>
+      </SafeAreaProvider>
     </ImageBackground>
   );
 };
