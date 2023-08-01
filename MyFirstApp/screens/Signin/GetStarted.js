@@ -53,9 +53,9 @@ const styles = StyleSheet.create({
   },
   GetStStyle: {
     backgroundColor: "#CF0A0A",
-    borderRadius: 20,
-    paddingHorizontal: 50,
-    paddingVertical: 18,
+    borderRadius: 13,
+    paddingHorizontal: 40,
+    paddingVertical: 15,
     marginTop: "7%",
     elevation: 8,
     justifyContent: "center",
